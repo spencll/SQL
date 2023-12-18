@@ -1,0 +1,25 @@
+
+{% extends 'base.html'  %}
+
+{% block title %}Forex{% endblock %}
+
+{% block content %}
+<script>
+    function edit(){
+      window.location.href = "/users/{{user.id}}/edit"
+    }
+  </script>
+
+<h1>{{ user.name }}</h1>
+<p>First name: {{ user.first_name }}</p>
+<p>Last name: {{ user.last_name }}</p>
+<img src= "{{user.image_url}}">
+
+<form method="POST" action="/users/{{user.id}}/delete">
+    <button type="button" onclick="edit()">Edit</button>  
+    <button type="submit">Delete</button>
+  </form>
+
+<a href="/users">Go back to users</a>
+
+{% endblock %}
