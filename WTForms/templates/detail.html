@@ -1,0 +1,36 @@
+
+{% extends 'base.html'  %}
+
+{% block title %}Forex{% endblock %}
+
+{% block content %}
+
+<!-- Script for edit button -->
+
+<p>Name: {{ pet.name}}</p>
+<p>Species: {{pet.species }}</p>
+<p>Age: {{pet.age}}</p>
+<img src= "{{pet.photo_url}}">
+
+
+<h2>Edit user</h2>
+<form method="POST">
+  <p>Pet name:  <input name="name" value="{{pet.name}}"></p>
+  <p>Species:  <input name="species" value="{{pet.species}}"></p>
+  <p>Photo URL:   <input name="photo_url" value="{{pet.photo_url}}"></p>
+  <p>Age:   <input name="age" value='{{pet.age}}'></p>
+  <p>Notes:   <input name="notes" value={{pet.notes}}></p>
+  <p>Available:   <input name="available" value={{pet.available}}></p>
+  <button>Save</button>
+</form>
+
+
+
+  
+ 
+<!--Goes to list of pets -->
+<a href="/">
+  <button type="button">Go back</button>
+</a>
+
+{% endblock %}

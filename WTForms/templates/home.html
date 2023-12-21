@@ -1,0 +1,28 @@
+{% extends 'base.html'  %}
+
+
+{% block title %}Users{% endblock %}
+
+{% block content %}
+
+<!--Shows user info and links to profile -->
+<h1>Pets</h1>
+<ul>
+  {% for pet in pets %}
+  <img src="{{pet.photo_url}}">
+  <li><a href="/pets/{{pet.id}}">{{pet.name}}</a></li>
+
+    {% if pet.available == 'true' %}
+    <b>Available</b>
+    {% endif %}
+
+  {% endfor %}
+</ul>
+
+<!--Goes to the form  -->
+<a href="/pets/add">
+  <button type="button">Add pet</button>
+</a>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html'  %}
+
+{% block title %}Add user{% endblock %}
+
+{% block content %}
+
+
+<h2>Add new pet</h2>
+
+<form method="POST">
+  <p>Pet name:  <input name="name" placeholder="Enter name"></p>
+  <p>Species:  <input name="species" placeholder="Enter species"></p>
+  <p>Photo URL:   <input name="photo_url" placeholder="Provide an image URL of this pet"></p>
+  <p>Age:   <input name="age" placeholder="Enter age"></p>
+  <p>Notes:   <input name="notes" placeholder="Optional"></p>
+  <button>Save</button>
+</form>
+
+<!--Goes to list of pets -->
+<a href="/">
+  <button type="button">Go back</button>
+</a>
+
+{% endblock %}
