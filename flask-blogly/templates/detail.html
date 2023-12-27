@@ -10,15 +10,29 @@
     }
   </script>
 
-<h1>{{ user.name }}</h1>
-<p>First name: {{ user.first_name }}</p>
+<p>Name: {{ user.first_name }}</p>
 <p>Last name: {{ user.last_name }}</p>
 <img src= "{{user.image_url}}">
 
+<h2>Posts</h2>
+<ul>
+  {% for post in all_posts%}
+      <li><a href="/posts/{{post.id}}">{{post.title}}</a></li>
+  
+  {% endfor %}
+  </ul>
+
+
 <form method="POST" action="/users/{{user.id}}/delete">
-    <button type="button" onclick="edit()">Edit</button>  
-    <button type="submit">Delete</button>
+    <button type="button" onclick="edit()">Edit User</button>  
+    <button type="submit">Delete user</button>
   </form>
+
+<!--Goes to the form  -->
+<a href="/users/{{user.id}}/posts/new">
+  <button type="button">Add post</button>
+</a>
+
 
 <a href="/users">Go back to users</a>
 

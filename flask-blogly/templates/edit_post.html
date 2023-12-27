@@ -1,0 +1,25 @@
+{% extends 'base.html'  %}
+
+{% block title %}Edit form{% endblock %}
+
+{% block content %}
+
+<!-- Script for cancel button -->
+<script>
+    function cancel(){
+      window.location.href = "/posts/{{post.id}}"
+    }
+  </script>
+
+
+<h2>Edit post</h2>
+
+<form method="POST">
+  <p>Title:  <input name="title" value="{{post.title}}"></p>
+  <p>Content:  <input name="content" value="{{post.content}}"></p>
+  <button type="button" onclick="cancel()"> Cancel</button>  
+  <button>Save</button>
+</form>
+
+
+{% endblock %}

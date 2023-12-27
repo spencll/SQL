@@ -1,15 +1,9 @@
 {% extends 'base.html'  %}
 
-{% block title %}Edit form{% endblock %}
+{% block title %}Edit post{% endblock %}
 
 {% block content %}
 
-<!-- Script for cancel button -->
-<script>
-    function cancel(){
-      window.location.href = "/users"
-    }
-  </script>
 
 
 <h2>Edit user</h2>
@@ -17,7 +11,7 @@
   <p>First name:  <input name="first_name" value="{{user.first_name}}"></p>
   <p>Last name:  <input name="last_name" value="{{user.last_name}}"></p>
   <p>Image URL:   <input name="image_url" value="{{user.image_url}}"></p>
-  <button type="button" onclick="cancel()"> Cancel</button>  
+  <a href="/tags" class="btn btn-info">Cancel</a>
   <button type="submit">Save</button>
 </form>
 

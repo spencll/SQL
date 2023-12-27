@@ -1,4 +1,3 @@
-"""Seed file to make sample data for Users db."""
 
 from models import User, db
 
@@ -8,6 +7,7 @@ db.create_all()
 
 # If table isn't empty, empty it
 User.query.delete()
+db.session.commit()
 
 # Add Users
 user1 = User(first_name='Bob', last_name="Sagot", image_url="https://m.media-amazon.com/images/M/MV5BMTQxMTY2NjE1NF5BMl5BanBnXkFtZTcwNjIyMjM2MQ@@._V1_.jpg")
